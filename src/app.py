@@ -8,16 +8,16 @@ from datetime import datetime
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗")
 
 # Load the model and encoders
-model_file = '../models/car_price_prediction_model_RandomForestRegressor.pkl'
-category_encoder_file = '../models/category_encoder.pkl'
-color_encoder_file = '../models/color_encoder.pkl'
-fuel_encoder_file = '../models/fuel_encoder.pkl'
-doors_encoder_file = '../models/doors_encoder.pkl'
-drive_encoder_file = '../models/drive_encoder.pkl'
-gear_encoder_file = '../models/gear_encoder.pkl'
-leather_encoder_file = '../models/leather_encoder.pkl'
-model_encoder_file = '../models/model_encoder.pkl'
-manufacturer_encoder_file = '../models/manufacturer_encoder.pkl'
+model_file = './models/car_price_prediction_model_RandomForestRegressor.pkl'
+category_encoder_file = './models/category_encoder.pkl'
+color_encoder_file = './models/color_encoder.pkl'
+fuel_encoder_file = './models/fuel_encoder.pkl'
+doors_encoder_file = './models/doors_encoder.pkl'
+drive_encoder_file = './models/drive_encoder.pkl'
+gear_encoder_file = './models/gear_encoder.pkl'
+leather_encoder_file = './models/leather_encoder.pkl'
+model_encoder_file = './models/model_encoder.pkl'
+manufacturer_encoder_file = './models/manufacturer_encoder.pkl'
 
 # Load pickled objects
 def load_pickle(file_path):
@@ -36,14 +36,14 @@ model_encoder = load_pickle(model_encoder_file)
 manufacturer_encoder = load_pickle(manufacturer_encoder_file)
 
 # Load Car Models dataset
-car_models_df = pd.read_csv("../datasets/Car_Models.csv")
+car_models_df = pd.read_csv("./datasets/Car_Models.csv")
 
 # Set background image
 def set_background():
     page_bg = f"""
     <style>
     body {{
-        background-image: url('../resources/background.jpg');
+        background-image: url('./resources/background.jpg');
         background-size: cover;
     }}
     </style>
@@ -84,7 +84,7 @@ st.title('Used Car Price Prediction App')
 
 # Sidebar with links
 st.sidebar.header("Useful Links")
-st.sidebar.markdown("[GitHub Repository](https://github.com/your_repo)")
+st.sidebar.markdown("[GitHub Repository](https://github.com/Jahirul-Pse/car_price_prediction_joined)")
 st.sidebar.markdown("[Docker Image](https://hub.docker.com/r/your_docker_image)")
 
 st.header('User Input Parameters')
